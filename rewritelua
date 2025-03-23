@@ -148,7 +148,7 @@ function Library:CreateLabel(Properties, IsHud)
         BackgroundTransparency = 1;
         Font = Library.Font;
         TextColor3 = Library.FontColor;
-        TextSize = 19;
+        TextSize = 16;
         TextStrokeTransparency = 0;
     });
 
@@ -2800,7 +2800,7 @@ do
         Position = UDim2.fromOffset(5, 2),
         TextXAlignment = Enum.TextXAlignment.Left,
 
-        Text = 'Keybinds';
+        Text = '     [Keybinds]';
         ZIndex = 104;
         Parent = KeybindInner;
     });
