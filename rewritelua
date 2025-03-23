@@ -2955,9 +2955,9 @@ function Library:CreateWindow(...)
         Config.Position = UDim2.fromScale(0.5, 0.5)
     end
 
-local Window = {
-    Tabs = {};
-};
+    local Window = {
+        Tabs = {};
+    };
 
     local Outer = Library:Create('Frame', {
         AnchorPoint = Config.AnchorPoint,
@@ -3169,7 +3169,6 @@ local Window = {
             Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'MainColor';
             TabFrame.Visible = true;
         end;
-        
 
         function Tab:HideTab()
             Blocker.BackgroundTransparency = 1;
@@ -3177,15 +3176,11 @@ local Window = {
             Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'BackgroundColor';
             TabFrame.Visible = false;
         end;
-        
 
         function Tab:SetLayoutOrder(Position)
             TabButton.LayoutOrder = Position;
             TabListLayout:ApplyLayout();
         end;
-
-        TabButton.Size = UDim2.new(0, 180, 0, 60); -- Increased width & height
-TabButton.TextSize = 20; -- Larger text size
 
         function Tab:AddGroupbox(Info)
             local Groupbox = {};
@@ -3263,7 +3258,7 @@ TabButton.TextSize = 20; -- Larger text size
                     end;
                 end;
 
-                BoxOuter.Size = UDim2.new(1, 0, 0, 30 + Size + 4);
+                BoxOuter.Size = UDim2.new(1, 0, 0, 20 + Size  + 4);
             end;
 
             Groupbox.Container = Container;
@@ -3284,7 +3279,7 @@ TabButton.TextSize = 20; -- Larger text size
         function Tab:AddRightGroupbox(Name)
             return Tab:AddGroupbox({ Side = 2; Name = Name; });
         end;
-        
+
         function Tab:AddTabbox(Info)
             local Tabbox = {
                 Tabs = {};
@@ -3429,7 +3424,7 @@ TabButton.TextSize = 20; -- Larger text size
 
                     for _, Button in next, TabboxButtons:GetChildren() do
                         if not Button:IsA('UIListLayout') then
-                            Button.Size = UDim2.new(1 / TabCount, 0, 1.2, 0);
+                            Button.Size = UDim2.new(1 / TabCount, 0, 1, 0);
                         end;
                     end;
 
